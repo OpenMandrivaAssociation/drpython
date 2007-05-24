@@ -1,21 +1,22 @@
 %define name	drpython
-%define version	161
-%define release %mkrel 2
-
-%define pyver	2.4
+%define version	165
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	Python editor and development environment
 Version: 	%{version}
 Release: 	%{release}
 
-Source:		http://prdownloads.sourceforge.net/drpython/%{name}-%{version}.zip
+Source:		http://prdownloads.sourceforge.net/drpython/%{name}%{version}.tar.bz2
 URL:		http://drpython.sourceforge.net/
 License:	GPL
 Group:		Development/Python
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	wxPythonGTK
 BuildRequires:	ImageMagick
+BuildRequires:	python-setuptools
+BuildRequires:	python
+BuildRequires:	python-devel
 BuildArch:	noarch
 
 %description
@@ -24,21 +25,15 @@ developing Python programs. It is intended primarily for use in schools, and
 is a tribute to DrScheme.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 chmod 644 %name.py
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%_bindir
-mkdir -p $RPM_BUILD_ROOT/%_datadir/%name
-mkdir -p $RPM_BUILD_ROOT/%_datadir/%name/documentation
-cp *.py* $RPM_BUILD_ROOT/%_datadir/%name
-cp -r examples bitmaps $RPM_BUILD_ROOT/%_datadir/%name
-cp -r documentation/* $RPM_BUILD_ROOT/%_datadir/%name/documentation/
-echo '#!/bin/bash' > $RPM_BUILD_ROOT/%_bindir/%name
-echo 'cd %_datadir/%name' >> $RPM_BUILD_ROOT/%_bindir/%name
-echo 'python drpython.pyw' >> $RPM_BUILD_ROOT/%_bindir/%name
+python setup.py install --root=$RPM_BUILD_ROOT
+echo 'python %py_puresitedir/%name/%name.pyw' >> $RPM_BUILD_ROOT/%_bindir/%name
 chmod 755 $RPM_BUILD_ROOT/%_bindir/%name
+rm -f $RPM_BUILD_ROOT/%_bindir/postinst.py
 
 #menu
 mkdir -p $RPM_BUILD_ROOT%{_menudir}
@@ -66,7 +61,10 @@ convert -size 32x32 documentation/%name.png $RPM_BUILD_ROOT/%_iconsdir/%name.png
 mkdir -p $RPM_BUILD_ROOT/%_miconsdir
 convert -size 48x48 documentation/%name.png $RPM_BUILD_ROOT/%_miconsdir/%name.png
 
-rm -rf $RPM_BUILD_ROOT%_datadir/drpython/bitmaps/24/.xvpics
+mkdir -p $RPM_BUILD_ROOT/%_iconsdir/hicolor/{48x48,32x32,16x16}/apps
+convert -size 16x16 documentation/%name.png $RPM_BUILD_ROOT/%_iconsdir/hicolor/16x16/apps/%name.png
+convert -size 32x32 documentation/%name.png $RPM_BUILD_ROOT/%_iconsdir/hicolor/32x32/apps/%name.png
+convert -size 48x48 documentation/%name.png $RPM_BUILD_ROOT/%_iconsdir/hicolor/48x48/apps/%name.png
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -81,9 +79,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc examples/ *.txt
 %{_bindir}/%name
-%{_datadir}/%name
+%py_puresitedir/%name
+%py_puresitedir/DrPython-165-py2.5.egg-info
 %{_menudir}/%name
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
+%{_iconsdir}/hicolor/16x16/apps/%name.png
+%{_iconsdir}/hicolor/32x32/apps/%name.png
+%{_iconsdir}/hicolor/48x48/apps/%name.png
 %{_datadir}/applications/mandriva-%{name}.desktop
