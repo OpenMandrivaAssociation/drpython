@@ -11,6 +11,7 @@ Source:		http://prdownloads.sourceforge.net/drpython/%{name}%{version}.tar.bz2
 URL:		http://drpython.sourceforge.net/
 License:	GPL
 Group:		Development/Python
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	wxPythonGTK
 BuildRequires:	ImageMagick
 BuildRequires:	python-setuptools
