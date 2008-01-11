@@ -36,10 +36,6 @@ chmod 755 $RPM_BUILD_ROOT/%_bindir/%name
 rm -f $RPM_BUILD_ROOT/%_bindir/postinst.py
 
 #menu
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): command="%{_bindir}/%{name}" icon="%{name}.png" needs="x11" title="Dr. Python" longtitle="Python Editor and IDE" section="More Applications/Development/Development Environments" xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -81,7 +77,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/%name
 %py_puresitedir/%name
 %py_puresitedir/DrPython-165-py2.5.egg-info
-%{_menudir}/%name
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
