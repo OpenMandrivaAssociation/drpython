@@ -1,6 +1,6 @@
 %define name	drpython
 %define version	165
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Summary: 	Python editor and development environment
@@ -27,6 +27,8 @@ is a tribute to DrScheme.
 %prep
 %setup -q -n %{name}
 chmod 644 %name.py
+#use xdg-open for the help instead of non existing mozilla
+sed --in-place "s/mozilla/xdg-open/" drPreferences.py
 
 %install
 rm -rf $RPM_BUILD_ROOT
