@@ -1,13 +1,9 @@
-%define name	drpython
-%define version	165
-%define release %mkrel 2
-
-Name: 	 	%{name}
+Name: 	 	drpython
 Summary: 	Python editor and development environment
-Version: 	%{version}
-Release: 	%{release}
-
-Source:		http://prdownloads.sourceforge.net/drpython/%{name}%{version}.tar.bz2
+Version: 	3.11.0
+Release: 	%mkrel 1
+Epoch:          1
+Source:		http://prdownloads.sourceforge.net/drpython/%{name}-%{version}.zip
 URL:		http://drpython.sourceforge.net/
 License:	GPL
 Group:		Development/Python
@@ -78,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc examples/ *.txt
 %{_bindir}/%name
 %py_puresitedir/%name
-%py_puresitedir/DrPython-165-py2.5.egg-info
+%py_puresitedir/DrPython-%{version}-py2.5.egg-info
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
