@@ -9,7 +9,7 @@ License:	GPL
 Group:		Development/Python
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	wxPythonGTK
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 BuildRequires:	python-setuptools
 BuildRequires:	python
 BuildRequires:	python-devel
