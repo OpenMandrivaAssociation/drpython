@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc examples/ *.txt
 %{_bindir}/%name
 %py_puresitedir/%name
-%py_puresitedir/DrPython-%{version}-py2.5.egg-info
+%py_puresitedir/DrPython-%{version}-py%{py_ver}.egg-info
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
