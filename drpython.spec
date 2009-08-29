@@ -1,7 +1,7 @@
-Name: 	 	drpython
+Name:		drpython
 Summary: 	Python editor and development environment
-Version: 	3.11.0
-Release: 	%mkrel 3
+Version: 	3.11.1
+Release: 	%mkrel 1
 Epoch:          1
 Source:		http://prdownloads.sourceforge.net/drpython/%{name}-%{version}.zip
 URL:		http://drpython.sourceforge.net/
@@ -21,7 +21,7 @@ developing Python programs. It is intended primarily for use in schools, and
 is a tribute to DrScheme.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}_%{version}
 chmod 644 %name.py
 #use xdg-open for the help instead of non existing mozilla
 sed --in-place "s/mozilla/xdg-open/" drPreferences.py
