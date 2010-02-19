@@ -1,11 +1,11 @@
 Name:		drpython
 Summary: 	Python editor and development environment
 Version: 	3.11.1
-Release: 	%mkrel 1
+Release: 	%mkrel 2
 Epoch:          1
 Source:		http://prdownloads.sourceforge.net/drpython/%{name}-%{version}.zip
 URL:		http://drpython.sourceforge.net/
-License:	GPL
+License:	GPLv2
 Group:		Development/Python
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	wxPythonGTK
