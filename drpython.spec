@@ -1,9 +1,9 @@
 Name:		drpython
 Summary: 	Python editor and development environment
-Version: 	3.11.1
-Release: 	%mkrel 3
+Version: 	3.11.3
+Release: 	1
 Epoch:          1
-Source:		http://prdownloads.sourceforge.net/drpython/%{name}-%{version}.zip
+Source:		https://sourceforge.net/projects/drpython/files/DrPython%20%283.x%29/3.11.3/DrPython_3.11.3.zip
 URL:		http://drpython.sourceforge.net/
 License:	GPLv2
 Group:		Development/Python
@@ -138,7 +138,7 @@ rm -rf $RPM_BUILD_ROOT
 
 
 
-* Tue Sep 05 2006 Nicolas Lécureuil <neoclust@mandriva.org> 161-2mdv2007.0
+* Tue Sep 05 2006 Nicolas LÃ©cureuil <neoclust@mandriva.org> 161-2mdv2007.0
 - XDG
 
 * Sun May 07 2006 Jerome Soyer <saispo@mandriva.org> 161-1mdk
@@ -337,3 +337,4 @@ rm -rf $RPM_BUILD_ROOT
 
 * Thu Jan 8 2004 Austin Acton <austin@linux.ca> 2.0.2-1mdk
 - initial package
+
