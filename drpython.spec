@@ -1,9 +1,9 @@
 Name:		drpython
 Summary: 	Python editor and development environment
-Version: 	3.11.3
+Version: 	165
 Release: 	1
 Epoch:          1
-Source:		https://sourceforge.net/projects/drpython/files/DrPython%20%283.x%29/3.11.3/DrPython_3.11.3.zip
+Source:		https://sourceforge.net/projects/drpython/files/DrPython%20%283.x%29/165/drpython165.zip
 URL:		http://drpython.sourceforge.net/
 License:	GPLv2
 Group:		Development/Python
