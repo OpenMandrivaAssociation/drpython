@@ -1,7 +1,7 @@
 Name:		drpython
 Summary: 	Python editor and development environment
 Version: 	3.11.1
-Release: 	%mkrel 3
+Release: 	4
 Epoch:          1
 Source:		http://prdownloads.sourceforge.net/drpython/%{name}-%{version}.zip
 URL:		http://drpython.sourceforge.net/
