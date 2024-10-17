@@ -4,7 +4,7 @@ Version: 	3.11.1
 Release: 	4
 Epoch:          1
 Source:		http://prdownloads.sourceforge.net/drpython/%{name}-%{version}.zip
-URL:		http://drpython.sourceforge.net/
+URL:		https://drpython.sourceforge.net/
 License:	GPLv2
 Group:		Development/Python
 BuildRoot:	%{_tmppath}/%{name}-buildroot
